@@ -5,12 +5,13 @@
 import { initMenuToggle } from './modules/menu-toggle.js';
 import { initProjectFilter } from './modules/project-filter.js';
 
-/** @type {Array<[selector: string, init: (root: HTMLElement) => void]>} */
-const MODULES = [
+type Enhancer = (root: HTMLElement) => void;
+
+const MODULES: ReadonlyArray<readonly [selector: string, init: Enhancer]> = [
   ['[data-menu-toggle]', initMenuToggle],
   ['[data-project-filter]', initProjectFilter],
 ];
 
 for (const [selector, init] of MODULES) {
-  document.querySelectorAll(selector).forEach((element) => init(element));
+  document.querySelectorAll<HTMLElement>(selector).forEach(init);
 }

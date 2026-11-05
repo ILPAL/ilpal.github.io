@@ -1,23 +1,40 @@
 # ilpal.github.io
 
 Website of **ILPAL**, the Initiative for Legacy Preservation, Adaptation and Longevity.
-It's a static, bilingual (English / Tiếng Việt) site built with [Jekyll](https://jekyllrb.com/) and Dart Sass.
+It's a static, bilingual (English / Tiếng Việt) site built with [Jekyll](https://jekyllrb.com/),
+Dart Sass and TypeScript.
 
 ## Develop
 
-Requires Ruby 3.1+ and Bundler.
+Requires Ruby 3.1+ with Bundler, and Node.js 20+.
 
 ```bash
 bundle install
+npm ci
+```
+
+Run these in two terminals:
+
+```bash
+npm run watch
+```
+
+```bash
 bundle exec jekyll serve --livereload
 ```
 
-Open <http://localhost:4000>. The output goes to `_site/`, which isn't committed.
+Open <http://localhost:4000>. Before committing, run `npm run typecheck`.
+Build output (`_site/`, `assets/js/`) isn't committed.
 
 ## Deploy
 
-`.github/workflows/pages.yml` builds every pull request and deploys every push to `main`.
+`.github/workflows/pages.yml` compiles the TypeScript, builds the site, checks every
+pull request and deploys every push to `main`.
+
 One-time setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+Don't use "Deploy from a branch": that mode ignores the workflow and uses GitHub's
+legacy builder, which can't compile the stylesheets or the TypeScript, so the site
+ships unstyled.
 
 ## Structure
 
@@ -40,9 +57,12 @@ _sass/
   base/                  Design tokens (CSS custom properties), reset, typography
   layout/                Container, hero band, grids
   components/            One partial per component (BEM class names)
+src/scripts/
+  main.ts                Script entry point; runs modules/ on elements that opt in via data-*
+  modules/               One file per behaviour (menu toggle, project filter)
 assets/
   css/main.scss          Sass entry point
-  js/main.js             JS entry point; loads modules/ for elements that opt in via data-*
+  js/                    Compiled from src/scripts (generated, not committed)
   img/                   Decorative artwork
   icon/                  Raster logo exports (see below)
 index.html, projects/, support/, about/     English pages (front matter only)

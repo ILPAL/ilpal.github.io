@@ -1,0 +1,17 @@
+{
+  "name": "ilpal-website",
+  "private": true,
+  "type": "module",
+  "description": "Front-end scripts for the ILPAL website. TypeScript in src/scripts compiles to assets/js.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "watch": "tsc --project tsconfig.json --watch",
+    "typecheck": "tsc --project tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "7.0.2"
+  }
+}

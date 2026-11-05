@@ -19,3 +19,7 @@ Thumbs.db
 *.psd
 *.fig
 assets/icon/*.svg
+
+# Node / TypeScript (assets/js is compiled from src/scripts)
+node_modules/
+assets/js/
