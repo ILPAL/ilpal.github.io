@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{%- include core/context.html -%}
+{%- assign s = t.projects -%}
+{%- assign projects = site.data.projects -%}
+{%- if projects.size == 1 -%}
+  {%- assign count_label = s.count_one -%}
+{%- else -%}
+  {%- assign count_label = s.count_other | replace: '%count%', projects.size -%}
+{%- endif -%}
+{% include components/page-hero.html title=s.title lead=s.lead %}
+
+<main id="main" class="container section section--tight" data-project-filter>
+  {%- if projects.size >= site.projects_filter_threshold %}
+  {% include components/project-filter.html %}
+  {%- endif %}
+
+  <p class="status-text" role="status" data-filter-count data-count-one="{{ s.count_one }}" data-count-other="{{ s.count_other }}">{{ count_label }}</p>
+
+  <div class="card-grid">
+    {%- for project in projects %}
+    {% include components/project-card.html project=project level=2 %}
+    {%- endfor %}
+  </div>
+
+  <div class="tile tile--start" data-filter-empty hidden>
+    <h2 class="heading-3">{{ s.empty }}</h2>
+    <button class="filter-button" type="button" aria-pressed="true" data-filter-clear>{{ s.clear }}</button>
+  </div>
+</main>

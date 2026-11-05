@@ -1,0 +1,132 @@
+@use "../abstracts" as *;
+
+.site-header {
+  position: relative;
+
+  &__bar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 32px;
+    padding-block: 16px;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: $touch-target;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+
+  &__mark {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+  }
+}
+
+.menu-toggle {
+  @include cut-corners(sm);
+  display: none;
+  align-items: center;
+  gap: 8px;
+  min-height: $touch-target;
+  padding: 0 16px;
+  border: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-on-dark);
+  background: var(--color-glass);
+  cursor: pointer;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 28px;
+  font-size: 15px;
+  font-weight: 500;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    min-height: $touch-target;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      text-decoration-thickness: 2px;
+    }
+
+    &[aria-current="page"] {
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+  }
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 700;
+
+  &__item {
+    @include cut-corners(sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: $touch-target;
+    text-decoration: none;
+    color: var(--color-on-dark);
+    background-color: var(--color-glass);
+    @include focus-inset(var(--color-accent));
+
+    &:hover {
+      background-color: var(--color-glass-hover);
+    }
+
+    &[aria-current="true"] {
+      color: var(--color-deep);
+      background: var(--color-accent);
+    }
+  }
+}
+
+// Collapsible menu on phones. Without JavaScript the links stay visible.
+@include mobile {
+  .site-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+
+    @include with-js {
+      display: none;
+
+      &.is-open {
+        display: flex;
+      }
+    }
+  }
+
+  .menu-toggle {
+    @include with-js {
+      display: flex;
+    }
+  }
+
+  .lang-switch {
+    padding-top: 8px;
+  }
+}

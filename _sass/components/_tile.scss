@@ -1,0 +1,111 @@
+@use "../abstracts" as *;
+
+// White content panel. Sizes control the corner cut and padding.
+.tile {
+  @include cut-corners(lg);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
+  padding: 28px;
+  background: var(--color-surface);
+
+  &--roomy {
+    gap: 14px;
+    padding: 32px;
+  }
+
+  &--md {
+    @include cut-corners(md);
+  }
+
+  &--start {
+    align-items: flex-start;
+  }
+}
+
+.fact-list {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px 20px;
+  margin: 0;
+  font-size: 15px;
+
+  dt {
+    font-size: 14px;
+    color: var(--color-ink-muted);
+  }
+
+  dd {
+    margin: 0;
+    font-weight: 700;
+  }
+}
+
+// Checklist with a leading icon per item.
+.icon-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  font-size: 17px;
+  font-weight: 500;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  svg {
+    flex: none;
+    margin-top: 4px;
+  }
+
+  &--yes svg {
+    color: var(--color-link);
+  }
+
+  &--no svg {
+    color: var(--color-ink-muted);
+  }
+}
+
+.screenshot {
+  @include cut-corners(lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+  margin: 0;
+  padding: 24px;
+  overflow: hidden;
+  font-weight: 700;
+  text-align: center;
+  background: var(--color-tint);
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &:has(img) {
+    padding: 0;
+  }
+
+  @include mobile {
+    min-height: 200px;
+  }
+}
+
+.prose-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .text-muted {
+    max-width: 38em;
+  }
+}

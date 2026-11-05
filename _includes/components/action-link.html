@@ -1,0 +1,12 @@
+{%- comment -%}
+  A large action button, or a "link coming soon" stand-in while the URL is empty.
+  Params:
+    label  visible text
+    url    destination; empty renders the placeholder
+    variant  optional "xl"
+{%- endcomment -%}
+{%- if include.url and include.url != "" -%}
+<a class="button button--primary{% if include.variant %} button--{{ include.variant }}{% endif %}" href="{{ include.url }}">{{ include.label }}</a>
+{%- else -%}
+<div class="pending-action{% if include.variant %} pending-action--{{ include.variant }}{% endif %}"><span>{{ include.label }}</span><small>{{ t.placeholders.add_link }}</small></div>
+{%- endif -%}

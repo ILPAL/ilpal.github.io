@@ -1,0 +1,24 @@
+{%- comment -%}
+  Site header: brand, primary navigation and language switch.
+  Placed inside a .page-hero band, which provides the dark background.
+  Reads page.nav to mark the current section.
+{%- endcomment -%}
+<header class="site-header">
+  <div class="container site-header__bar">
+    {%- assign home_url = locale_prefix | append: '/' | relative_url %}
+    {% include components/brand.html href=home_url %}
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+      {% include icons/menu.svg %}
+      <span>{{ t.a11y.menu }}</span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="{{ t.a11y.nav }}">
+      {%- for item in site.data.navigation %}
+      {%- if item.href %}{% assign nav_href = item.href %}{% else %}{% assign nav_href = locale_prefix | append: item.path | relative_url %}{% endif %}
+      <a class="site-nav__link" href="{{ nav_href }}"{% if item.id == page.nav %} aria-current="page"{% endif %}>{{ item.text | default: t.nav[item.label] }}</a>
+      {%- endfor %}
+      {% include components/lang-switch.html %}
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,54 @@
+{%- comment -%}
+  Title and description resolve from, in order: page front matter, the project
+  record (project pages), then the page's strings in _data/i18n.
+{%- endcomment -%}
+{%- assign page_strings = t[page.page_key] -%}
+{%- if page.project -%}
+  {%- assign head_project = site.data.projects | where: "id", page.project | first -%}
+  {%- assign page_strings = nil -%}
+{%- endif -%}
+{%- if page.title -%}
+  {%- assign page_title = page.title -%}
+{%- elsif head_project -%}
+  {%- assign page_title = head_project.title | append: ' · ' | append: site.title -%}
+{%- elsif page.page_key == 'home' -%}
+  {%- assign page_title = site.title -%}
+{%- else -%}
+  {%- assign page_title = page_strings.title | append: ' · ' | append: site.title -%}
+{%- endif -%}
+{%- assign page_description = page.description | default: head_project.i18n[lang].summary | default: page_strings.description | default: t.home.description -%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_description | strip_html | escape }}">
+<meta name="theme-color" content="#021a52">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+{%- if page.ref %}
+{%- assign translations = site.pages | where: "ref", page.ref %}
+{%- for translation in translations %}
+<link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.url | absolute_url }}">
+{%- if translation.lang == site.default_lang %}
+<link rel="alternate" hreflang="x-default" href="{{ translation.url | absolute_url }}">
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_description | strip_html | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ site.brand.social_image | absolute_url }}">
+<meta property="og:locale" content="{{ locale.og_locale }}">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" type="image/png" sizes="32x32" href="{{ site.brand.favicon | relative_url }}">
+<link rel="apple-touch-icon" href="{{ site.brand.social_image | relative_url }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&amp;family=Noto+Sans+KR:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<script>document.documentElement.classList.add("js");</script>
+<script type="module" src="{{ '/assets/js/main.js' | relative_url }}"></script>

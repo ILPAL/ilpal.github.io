@@ -1,0 +1,6 @@
+{%- comment -%}
+  Three-facet gem glyph used by the home-page pillars.
+  Params: palette  "right,left,top" facet fill colors
+{%- endcomment -%}
+{%- assign facet = include.palette | split: "," -%}
+<svg aria-hidden="true" width="44" height="44" viewBox="0 0 44 44"><polygon points="22,3 41,17 22,41" fill="{{ facet[0] }}"/><polygon points="22,3 3,17 22,41" fill="{{ facet[1] }}"/><polygon points="22,3 32,17 12,17" fill="{{ facet[2] }}"/></svg>

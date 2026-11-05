@@ -1,0 +1,21 @@
+{%- comment -%}
+  Resolves the rendering context for the current page. Include it at the top of
+  every layout. Liquid `assign` writes to the global scope, so these variables
+  stay available to the caller and to any include rendered after it.
+
+  Sets:
+    lang           locale code of the page ("en", "vi")
+    t              UI strings, _data/i18n/<lang>.yml
+    locale         locale metadata, _data/locales.yml
+    locale_prefix  path prefix for the locale ("" or "/vi")
+    org            _data/organization.yml
+    github_link    rendered link to the GitHub organization
+    about_link     rendered link to the About page
+{%- endcomment -%}
+{%- assign lang = page.lang | default: site.default_lang -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- assign locale = site.data.locales[lang] -%}
+{%- assign locale_prefix = locale.prefix -%}
+{%- assign org = site.data.organization -%}
+{%- capture github_link -%}<a class="text-link" href="{{ org.github_url }}">{{ t.links.github_org }}</a>{%- endcapture -%}
+{%- capture about_link -%}<a class="text-link" href="{{ locale_prefix | append: '/about/' | relative_url }}">{{ t.links.about_page }}</a>{%- endcapture -%}

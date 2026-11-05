@@ -1,0 +1,26 @@
+{%- comment -%}
+  Project summary card.
+  Params:
+    project  an entry from _data/projects.yml
+    wide     true for the featured, side-by-side layout
+    level    heading level of the title (default 3)
+{%- endcomment -%}
+{%- assign card = include.project -%}
+{%- assign card_level = include.level | default: 3 -%}
+{%- assign card_text = card.i18n[lang] -%}
+{%- assign card_kind = site.data.taxonomy.kinds | where: "id", card.kind | first -%}
+{%- assign card_url = locale_prefix | append: '/projects/' | append: card.id | append: '/' | relative_url -%}
+<article class="project-card{% if include.wide %} project-card--wide{% endif %}" data-project data-kind="{{ card.kind }}" data-status="{{ card.status }}">
+  <img class="project-card__thumb" src="{{ card.thumbnail | default: card_kind.thumbnail | relative_url }}" alt="" loading="lazy" width="400" height="200">
+  <div class="project-card__body">
+    <ul class="chip-list">
+      <li class="chip">{{ t.taxonomy.kinds[card.kind] }}</li>
+      <li class="chip chip--{{ card.status }}">{{ t.taxonomy.statuses[card.status] }}</li>
+    </ul>
+    <h{{ card_level }} class="project-card__title">{{ card.title }}</h{{ card_level }}>
+    {%- if card_text.summary %}
+    <p class="text-muted">{{ card_text.summary }}</p>
+    {%- endif %}
+    <a class="arrow-link project-card__cta" href="{{ card_url }}" aria-label="{{ t.project_card.cta }}: {{ card.title }}">{{ t.project_card.cta }}</a>
+  </div>
+</article>

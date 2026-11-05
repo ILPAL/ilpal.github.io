@@ -1,0 +1,48 @@
+// Auto-fitting grids. min(…, 100%) keeps a single column from overflowing on phones.
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+  gap: 16px;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 16px;
+
+  &--tight {
+    gap: 12px;
+  }
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 32px 48px;
+  padding-top: 32px;
+}
+
+// Main column plus a sidebar that wraps under it on narrow screens.
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px 64px;
+
+  &__main {
+    display: flex;
+    flex: 999 1 560px;
+    flex-direction: column;
+    gap: 36px;
+    min-width: 0;
+    font-size: 17px;
+  }
+
+  &__aside {
+    display: flex;
+    flex: 1 1 300px;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,57 @@
+@use "sass:map";
+@use "variables" as *;
+
+// Clips the top-left and bottom-right corners: the faceted "gem" silhouette.
+@mixin cut-corners($size: md) {
+  $c: map.get($cut-sizes, $size);
+  @if not $c {
+    @error "Unknown cut size `#{$size}`. Expected one of #{map.keys($cut-sizes)}.";
+  }
+  clip-path: polygon(
+    #{$c} 0, 100% 0, 100% calc(100% - #{$c}),
+    calc(100% - #{$c}) 100%, 0 100%, 0 #{$c}
+  );
+}
+
+@mixin mobile {
+  @media (max-width: $bp-mobile) {
+    @content;
+  }
+}
+
+// Only when JavaScript is running (see the inline script in core/head.html).
+@mixin with-js {
+  :root.js & {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+// Inset focus ring: outlines are invisible outside a clip-path, so draw them inside.
+@mixin focus-inset($color, $offset: -7px) {
+  &:focus-visible {
+    outline: 3px solid $color;
+    outline-offset: $offset;
+  }
+}
+
+@mixin lift-on-hover {
+  transition: background-color 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  @include reduced-motion {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}

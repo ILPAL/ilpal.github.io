@@ -1,0 +1,63 @@
+@use "../abstracts" as *;
+
+// Home-page-only pieces: the hero split and the brand pillars.
+.hero {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px 56px;
+  padding-block: clamp(32px, 4vw, 56px) clamp(56px, 6vw, 88px);
+
+  &__copy {
+    display: flex;
+    flex: 999 1 560px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 26px;
+    min-width: 0;
+  }
+
+  &__art {
+    display: flex;
+    flex: 1 1 340px;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  // Raster mark: never upscale past its native size.
+  &__gem {
+    width: min(100%, var(--gem-size, 256px));
+    height: auto;
+
+    @include mobile {
+      width: 176px;
+    }
+  }
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cta-band {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-on-dark);
+  background: var(--color-royal);
+
+  .lead {
+    color: var(--color-on-dark-soft);
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding-block: clamp(56px, 6vw, 80px);
+  }
+}

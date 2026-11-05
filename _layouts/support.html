@@ -1,0 +1,48 @@
+---
+layout: default
+---
+{%- include core/context.html -%}
+{%- assign s = t.support -%}
+{% include components/page-hero.html title=t.shared.fund_title lead=t.shared.fund_lead %}
+
+<main id="main" class="container section section--loose">
+  <section class="stack" aria-labelledby="platforms-heading">
+    <h2 class="heading-2" id="platforms-heading">{{ s.platforms_heading }}</h2>
+    <div class="tile-grid tile-grid--tight">
+      {%- for platform in org.donation_platforms %}
+      {% include components/action-link.html label=platform.name url=platform.url variant="xl" %}
+      {%- endfor %}
+    </div>
+  </section>
+
+  <div class="tile-grid">
+    <section class="tile tile--roomy">
+      <h2 class="heading-3">{{ s.pays_for_heading }}</h2>
+      <ul class="icon-list icon-list--yes">
+        {%- for item in s.pays_for %}
+        <li>{% include icons/check.svg %}<span>{{ item }}</span></li>
+        {%- endfor %}
+      </ul>
+    </section>
+    <section class="tile tile--roomy">
+      <h2 class="heading-3">{{ s.not_for_heading }}</h2>
+      <ul class="icon-list icon-list--no">
+        {%- for item in s.not_for %}
+        <li>{% include icons/cross.svg %}<span>{{ item }}</span></li>
+        {%- endfor %}
+      </ul>
+    </section>
+  </div>
+
+  <section class="stack" aria-labelledby="faq-heading">
+    <h2 class="heading-2" id="faq-heading">{{ s.faq_heading }}</h2>
+    <div class="tile-grid">
+      {%- for entry in s.faq %}
+      <div class="tile tile--md">
+        <h3 class="heading-3 heading-3--sm">{{ entry.question }}</h3>
+        <p class="text-muted">{% include core/localize.html text=entry.answer_html %}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </section>
+</main>

@@ -1,0 +1,16 @@
+# Organization facts shared by every locale.
+# Leave a value empty ("") to render the localized placeholder until it is known.
+github_url: https://github.com/ILPAL
+github_label: github.com/ILPAL
+contact_url: ""
+contact_label: ""
+funding_reports_url: ""
+
+# Donation platforms, in display order. A platform without `url` is shown as "coming soon".
+donation_platforms:
+  - name: Open Collective
+    url: ""
+  - name: Patreon
+    url: ""
+  - name: GitHub Sponsors
+    url: ""

@@ -1,0 +1,14 @@
+{%- comment -%}
+  Sets `translation_url` to this page in another locale, or that locale's home
+  page when no translation exists. Pages are linked by a shared `ref` front matter key.
+  Params: code  target locale code
+{%- endcomment -%}
+{%- assign translation = nil -%}
+{%- if page.ref -%}
+  {%- assign translation = site.pages | where: "ref", page.ref | where: "lang", include.code | first -%}
+{%- endif -%}
+{%- if translation -%}
+  {%- assign translation_url = translation.url | relative_url -%}
+{%- else -%}
+  {%- assign translation_url = site.data.locales[include.code].prefix | append: '/' | relative_url -%}
+{%- endif -%}

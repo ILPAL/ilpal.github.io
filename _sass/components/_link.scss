@@ -1,0 +1,56 @@
+@use "../abstracts" as *;
+
+// Standalone link with a comfortable touch target.
+.arrow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: $touch-target;
+  font-weight: 700;
+  color: var(--color-link);
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+// Link inside running text.
+.text-link {
+  font-weight: 700;
+  color: var(--color-link);
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: $touch-target;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: -80px;
+  left: 16px;
+  z-index: 10;
+  padding: 12px 18px;
+  font-weight: 700;
+  color: var(--color-deep);
+  background: var(--color-accent);
+
+  &:focus {
+    top: 8px;
+  }
+}

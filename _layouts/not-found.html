@@ -1,0 +1,10 @@
+---
+layout: default
+---
+{%- include core/context.html -%}
+{%- assign s = t.not_found -%}
+{% include components/page-hero.html title=s.title lead=s.lead %}
+
+<main id="main" class="container section">
+  <a class="arrow-link" href="{{ locale_prefix | append: '/' | relative_url }}">{{ s.home }}</a>
+</main>

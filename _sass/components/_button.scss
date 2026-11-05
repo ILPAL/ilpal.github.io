@@ -1,0 +1,76 @@
+@use "../abstracts" as *;
+
+// Large call-to-action. Variants: --primary (accent on dark), --ghost (glass on dark).
+.button {
+  @include cut-corners(md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 0 28px;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+
+  &--primary {
+    @include lift-on-hover;
+    @include focus-inset(var(--color-deep));
+    color: var(--color-deep);
+    background-color: var(--color-accent);
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+    }
+  }
+
+  &--ghost {
+    @include lift-on-hover;
+    @include focus-inset(var(--color-accent));
+    color: var(--color-on-dark);
+    background-color: var(--color-glass);
+
+    &:hover {
+      background-color: var(--color-glass-hover);
+    }
+  }
+
+  // Platform tiles on the Support page.
+  &--xl {
+    min-height: 76px;
+    font-size: 19px;
+    font-weight: 800;
+  }
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+// Stand-in for an action whose link is not known yet.
+.pending-action {
+  @include cut-corners(md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 56px;
+  padding: 0 28px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-ink);
+  background: var(--color-tint);
+
+  small {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  &--xl {
+    min-height: 76px;
+    font-size: 19px;
+    font-weight: 800;
+  }
+}

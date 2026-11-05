@@ -1,0 +1,5 @@
+{%- comment -%}
+  Renders a translated HTML string with its tokens replaced.
+  Params: text  a value from _data/i18n whose key ends in `_html`
+{%- endcomment -%}
+{{- include.text | replace: '%github%', github_link | replace: '%about%', about_link -}}

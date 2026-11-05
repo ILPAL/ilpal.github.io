@@ -1,0 +1,15 @@
+# Project classification. Keys are stable ids used in _data/projects.yml,
+# CSS modifiers (.chip--<status>) and the data-* attributes read by the filter script.
+# Labels live in _data/i18n/<lang>.yml under `taxonomy`.
+kinds:
+  - id: games
+    thumbnail: /assets/img/thumbs/games.svg
+  - id: software
+    thumbnail: /assets/img/thumbs/software.svg
+  - id: modding-tools
+    thumbnail: /assets/img/thumbs/modding-tools.svg
+
+statuses:
+  - id: in-development
+  - id: released
+  - id: archived

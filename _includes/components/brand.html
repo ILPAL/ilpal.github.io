@@ -1,0 +1,12 @@
+{%- comment -%}
+  Logo mark + wordmark. Uses the transparent raster logo from _config.yml (brand.logo).
+  Params: href  optional; renders a link when present
+{%- endcomment -%}
+{%- capture brand_inner -%}
+<img class="brand__mark" src="{{ site.brand.logo | relative_url }}" alt="" width="44" height="44"><span>{{ site.title }}</span>
+{%- endcapture -%}
+{%- if include.href -%}
+<a class="brand" href="{{ include.href }}">{{ brand_inner }}</a>
+{%- else -%}
+<div class="brand">{{ brand_inner }}</div>
+{%- endif -%}

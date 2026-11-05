@@ -1,0 +1,21 @@
+{%- comment -%}
+  Dark band with the site header and the page title, followed by the facet strip.
+  Params:
+    title       page heading
+    lead        intro paragraph (may contain inline HTML)
+    back_href   optional "back" link above the title
+    back_label  text for the back link
+{%- endcomment -%}
+<div class="page-hero">
+  {% include components/site-header.html %}
+  <div class="container page-hero__body{% if include.back_href %} page-hero__body--compact-top{% endif %}">
+    {%- if include.back_href %}
+    <a class="back-link" href="{{ include.back_href }}">{% include icons/chevron-left.svg %}<span>{{ include.back_label }}</span></a>
+    {%- endif %}
+    <h1 class="heading-1">{{ include.title }}</h1>
+    {%- if include.lead %}
+    <p class="lead">{{ include.lead }}</p>
+    {%- endif %}
+  </div>
+</div>
+{% include components/facet-strip.html %}

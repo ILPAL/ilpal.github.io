@@ -1,0 +1,41 @@
+// Dark band at the top of every page: site header + page title.
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-on-dark);
+  background: var(--color-deep);
+
+  .lead {
+    color: var(--color-on-dark-soft);
+  }
+
+  &__body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-block: clamp(32px, 4vw, 56px) clamp(40px, 5vw, 64px);
+
+    &--compact-top {
+      padding-top: clamp(16px, 2vw, 24px);
+    }
+  }
+}
+
+// Faceted light rays behind a dark band.
+.backdrop {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+// Row of facets under the hero band.
+.facet-strip {
+  width: 100%;
+  height: 48px;
+  background: var(--color-deep);
+}

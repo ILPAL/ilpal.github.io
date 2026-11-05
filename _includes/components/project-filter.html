@@ -1,0 +1,20 @@
+{%- comment -%}
+  Kind and status filters for the project list. Hidden until
+  assets/js/modules/project-filter.js takes over, since it needs JavaScript.
+{%- endcomment -%}
+<div class="filter-bar" data-filter-bar hidden>
+  {%- assign filter_groups = "kind,status" | split: "," %}
+  {%- for group in filter_groups %}
+  {%- if group == "kind" %}
+    {%- assign options = site.data.taxonomy.kinds %}{% assign labels = t.taxonomy.kinds %}{% assign group_label = t.projects.filter_by_kind %}
+  {%- else %}
+    {%- assign options = site.data.taxonomy.statuses %}{% assign labels = t.taxonomy.statuses %}{% assign group_label = t.projects.filter_by_status %}
+  {%- endif %}
+  <div class="filter-bar__group" role="group" aria-label="{{ group_label }}" data-filter-group="{{ group }}">
+    <button class="filter-button" type="button" aria-pressed="true" data-filter-value="all">{{ t.projects.filter_all }}</button>
+    {%- for option in options %}
+    <button class="filter-button" type="button" aria-pressed="false" data-filter-value="{{ option.id }}">{{ labels[option.id] }}</button>
+    {%- endfor %}
+  </div>
+  {%- endfor %}
+</div>

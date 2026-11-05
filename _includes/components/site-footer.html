@@ -1,0 +1,42 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__columns">
+      <div class="site-footer__brand">
+        {% include components/brand.html %}
+        <p lang="en">{{ t.org_full_name }}</p>
+      </div>
+
+      <nav aria-labelledby="footer-site-heading">
+        <h2 class="site-footer__heading" id="footer-site-heading">{{ t.footer.site }}</h2>
+        <ul class="site-footer__list">
+          {%- for item in site.data.navigation %}{% if item.path %}
+          <li><a href="{{ locale_prefix | append: item.path | relative_url }}">{{ t.nav[item.label] }}</a></li>
+          {%- endif %}{% endfor %}
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="site-footer__heading">{{ t.footer.connect }}</h2>
+        <ul class="site-footer__list">
+          <li><a href="{{ org.github_url }}">{{ org.github_label }}</a></li>
+          <li>
+            {%- if org.contact_url != "" %}
+            <a href="{{ org.contact_url }}">{{ org.contact_label | default: org.contact_url }}</a>
+            {%- else %}
+            <span>{{ t.placeholders.contact }}</span>
+            {%- endif %}
+          </li>
+          {%- for code in site.languages %}{% unless code == lang %}
+          {%- include core/translation-url.html code=code %}
+          <li><a href="{{ translation_url }}" hreflang="{{ code }}" lang="{{ site.data.locales[code].html_lang }}">{{ site.data.locales[code].name }}</a></li>
+          {%- endunless %}{% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__base">
+      <span>{{ t.footer.content_license }}</span>
+      <span>{{ t.footer.per_project_license }}</span>
+    </div>
+  </div>
+</footer>

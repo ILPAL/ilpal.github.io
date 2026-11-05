@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+<polygon points="1040,380 620,0 980,0" fill="#2EEAFF" fill-opacity="0.05"></polygon>
+<polygon points="1040,380 980,0 1320,0" fill="#0C8AF7" fill-opacity="0.16"></polygon>
+<polygon points="1040,380 1320,0 1440,0 1440,190" fill="#2EEAFF" fill-opacity="0.09"></polygon>
+<polygon points="1040,380 1440,190 1440,520" fill="#0C8AF7" fill-opacity="0.2"></polygon>
+<polygon points="1040,380 1440,520 1440,800 1230,800" fill="#2EEAFF" fill-opacity="0.07"></polygon>
+<polygon points="1040,380 1230,800 860,800" fill="#0C8AF7" fill-opacity="0.13"></polygon>
+<polygon points="1040,380 860,800 560,800" fill="#2EEAFF" fill-opacity="0.04"></polygon>
+<polygon points="1040,380 620,0 700,420" fill="#0C8AF7" fill-opacity="0.06"></polygon>
+<polygon points="1040,380 700,420 560,800" fill="#0C8AF7" fill-opacity="0.05"></polygon>
+</svg>

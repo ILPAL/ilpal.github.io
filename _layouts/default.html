@@ -1,0 +1,16 @@
+{%- comment -%}
+  Document shell. Page layouts render the hero band and <main id="main">;
+  this layout adds <head>, the skip link and the footer.
+{%- endcomment -%}
+{%- include core/context.html -%}
+<!doctype html>
+<html lang="{{ locale.html_lang }}">
+<head>
+{% include core/head.html %}
+</head>
+<body>
+<a class="skip-link" href="#main">{{ t.a11y.skip }}</a>
+{{ content }}
+{% include components/site-footer.html %}
+</body>
+</html>

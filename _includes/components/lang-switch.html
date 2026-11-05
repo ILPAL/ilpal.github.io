@@ -1,0 +1,14 @@
+{%- comment -%}
+  Links to the current page in every locale.
+{%- endcomment -%}
+<div class="lang-switch" role="group" aria-label="{{ t.a11y.language }}">
+  {%- for code in site.languages %}
+  {%- assign target = site.data.locales[code] %}
+  {%- if code == lang %}
+  <span class="lang-switch__item" aria-current="true">{{ target.code }}</span>
+  {%- else %}
+  {%- include core/translation-url.html code=code %}
+  <a class="lang-switch__item" href="{{ translation_url }}" hreflang="{{ code }}" lang="{{ target.html_lang }}" aria-label="{{ target.name }}">{{ target.code }}</a>
+  {%- endif %}
+  {%- endfor %}
+</div>

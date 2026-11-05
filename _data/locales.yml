@@ -1,0 +1,13 @@
+# Locale metadata. `prefix` is prepended to every site path for that locale.
+en:
+  code: EN
+  name: English
+  html_lang: en
+  og_locale: en_US
+  prefix: ""
+vi:
+  code: VI
+  name: Tiếng Việt
+  html_lang: vi
+  og_locale: vi_VN
+  prefix: /vi

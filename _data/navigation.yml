@@ -1,0 +1,14 @@
+# Primary navigation. `path` is locale-relative; `href` is used as-is (external links).
+# `label` is a key under `nav` in _data/i18n/<lang>.yml unless `text` is given.
+- id: projects
+  path: /projects/
+  label: projects
+- id: support
+  path: /support/
+  label: support
+- id: about
+  path: /about/
+  label: about
+- id: github
+  href: https://github.com/ILPAL
+  text: GitHub

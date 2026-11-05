@@ -1,0 +1,47 @@
+# ---------------------------------------------------------------------------
+# ILPAL website: Jekyll configuration
+# Content lives in _data/; this file only holds build and site-wide settings.
+# ---------------------------------------------------------------------------
+
+title: ILPAL
+url: "https://ilpal.github.io"
+baseurl: ""
+
+# Locales. The first entry is the default and is served from the site root;
+# every other locale is served from /<code>/. Strings live in _data/i18n/<code>.yml
+# and locale metadata in _data/locales.yml.
+languages: [en, vi]
+default_lang: en
+
+# Brand assets. Raster only: the vector logo is intentionally not published.
+brand:
+  logo: /assets/icon/ilpal-project-icon-256-transparent.png
+  logo_size: 256
+  favicon: /assets/icon/ilpal-nav-icon-32.png
+  social_image: /assets/icon/ilpal-project-icon-256.png
+
+# The project list shows kind/status filters once it holds at least this many projects.
+projects_filter_threshold: 5
+
+defaults:
+  - scope: { path: "" }
+    values: { layout: default, lang: en }
+  - scope: { path: "vi" }
+    values: { lang: vi }
+
+plugins:
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+  sass_dir: _sass
+  sourcemap: development
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .editorconfig
+  - .github/

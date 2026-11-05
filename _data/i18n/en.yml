@@ -1,0 +1,141 @@
+# English UI strings. Keep keys identical across every file in this folder.
+# Keys ending in `_html` may contain inline HTML and these tokens:
+#   %github%  link to the GitHub organization
+#   %about%   link to the About page
+#   %count%   a number
+
+org_full_name: Initiative for Legacy Preservation, Adaptation and Longevity
+
+a11y:
+  skip: Skip to main content
+  nav: Main
+  menu: Menu
+  language: Language
+
+nav:
+  projects: Projects
+  support: Support
+  about: About
+
+footer:
+  site: Site
+  connect: Connect
+  per_project_license: Each project has its own code license.
+  content_license: "[WEBSITE CONTENT LICENSE]"
+
+placeholders:
+  add_link: "[ADD LINK]"
+  contact: "[CONTACT]"
+  release_date: "[PUBLIC RELEASE DATE]"
+  screenshot: "[PROJECT SCREENSHOT]"
+  team: "[TEAM NAMES AND ROLES]"
+  legal_status: "[LEGAL STATUS AND COUNTRY]"
+  funding_reports: "[LINK TO FUNDING REPORTS]"
+
+links:
+  github_org: ILPAL organization on GitHub
+  about_page: About page
+
+shared:
+  contribute_html: Code, testing and documentation all help. Start with the %github%.
+  independence: ILPAL is independent and isn't affiliated with the rights holders of the software it studies.
+  nonprofit: ILPAL is intended to operate as a non-profit.
+  support_cta: Support development
+  fund_title: Fund the people writing the code.
+  fund_lead: Analyzing a program, researching how it works and then writing the code takes a lot of time and effort. Your donation gives ILPAL developers the time to do it.
+
+taxonomy:
+  kinds:
+    games: Games
+    software: Software
+    modding-tools: Modding tools
+  statuses:
+    in-development: In development
+    released: Released
+    archived: Archived
+
+project_card:
+  cta: View project
+
+home:
+  title: ILPAL
+  description: ILPAL writes open-source emulators, server reimplementations and modding tools for abandoned software.
+  hero_title: Dead software deserves working code.
+  hero_lead: ILPAL writes open-source emulators, server reimplementations and modding tools, so abandoned software, from games to messengers, can keep running and keep changing long after official support ends.
+  hero_secondary: See the projects
+  hero_image_alt: ILPAL diamond heart
+  latest: Latest project
+  all_projects: See all projects
+  pillars:
+    - title: Preservation
+      body: Emulators and server reimplementations for software whose official service has ended.
+    - title: Adaptation
+      body: Modding tools and documentation that let people change the software they love.
+    - title: Longevity
+      body: Open code that anyone can read, run and carry forward, with or without us.
+  fund_cta: Ways to support
+
+projects:
+  title: Projects
+  description: Emulators, server reimplementations and modding tools for abandoned software.
+  lead: Emulators, server reimplementations and modding tools for abandoned software. Every project is open source.
+  filter_all: All
+  filter_by_kind: Filter by kind
+  filter_by_status: Filter by status
+  count_one: 1 project
+  count_other: "%count% projects"
+  empty: No projects match these filters.
+  clear: Clear filters
+
+project:
+  back: All projects
+  help_heading: Help with this project
+  view_source: View source
+  read_docs: Read the docs
+  facts:
+    kind: Kind
+    status: Status
+    release: Source release
+    license: License
+    stack: Stack
+
+support:
+  title: Support
+  description: Fund the developers who keep abandoned software running.
+  platforms_heading: Choose a platform
+  pays_for_heading: Your donation pays for
+  pays_for:
+    - Developer time on emulators and server code
+    - Protocol and file-format research
+    - Modding tools and documentation
+  not_for_heading: It does not pay for
+  not_for:
+    - Running public servers
+    - Software access, in-game items or other perks
+  faq_heading: Before you give
+  faq:
+    - question: Is ILPAL a non-profit?
+      answer_html: "ILPAL is intended to operate as a non-profit. [LEGAL STATUS AND COUNTRY]. Don't assume your donation is tax-deductible unless this page says so."
+    - question: Is ILPAL tied to the original publishers?
+      answer_html: No. ILPAL is independent and isn't affiliated with the rights holders of the software it studies.
+    - question: Who runs ILPAL?
+      answer_html: See the %about% for the team, legal status and how funds are used.
+    - question: Can I help without donating?
+      answer_html: Yes. Code, testing and documentation all help. Start with the %github%.
+
+about:
+  title: About
+  description: Who runs ILPAL, how it is funded and how to contribute.
+  heading: About ILPAL
+  lead_html: The Initiative for Legacy Preservation, Adaptation and Longevity writes open-source code that keeps abandoned software running and changing.
+  team_heading: Who runs ILPAL
+  legal_heading: Legal status
+  funds_heading: How funds are used
+  independence_heading: Independence
+  contact_heading: Contact
+  contribute_heading: Contribute
+
+not_found:
+  title: Page not found
+  lead: This page doesn't exist, or it has moved.
+  home: Back to the home page

@@ -1,0 +1,42 @@
+---
+layout: default
+---
+{%- include core/context.html -%}
+{%- assign s = t.about -%}
+{%- capture lead -%}{% include core/localize.html text=s.lead_html %}{%- endcapture -%}
+{%- capture funds -%}
+  {%- if org.funding_reports_url != "" -%}<a class="text-link" href="{{ org.funding_reports_url }}">{{ org.funding_reports_url }}</a>{%- else -%}{{ t.placeholders.funding_reports }}{%- endif -%}
+{%- endcapture -%}
+{%- capture contact -%}
+  {%- if org.contact_url != "" -%}<a class="text-link" href="{{ org.contact_url }}">{{ org.contact_label | default: org.contact_url }}</a>{%- else -%}{{ t.placeholders.contact }}{%- endif -%}
+{%- endcapture -%}
+{% include components/page-hero.html title=s.heading lead=lead %}
+
+<main id="main" class="container section">
+  <div class="tile-grid">
+    <section class="tile tile--roomy">
+      <h2 class="heading-3">{{ s.team_heading }}</h2>
+      <p class="text-muted">{{ t.placeholders.team }}</p>
+    </section>
+    <section class="tile tile--roomy">
+      <h2 class="heading-3">{{ s.legal_heading }}</h2>
+      <p class="text-muted">{{ t.shared.nonprofit }} {{ t.placeholders.legal_status }}</p>
+    </section>
+    <section class="tile tile--roomy">
+      <h2 class="heading-3">{{ s.funds_heading }}</h2>
+      <p class="text-muted">{{ funds }}</p>
+    </section>
+    <section class="tile tile--roomy">
+      <h2 class="heading-3">{{ s.independence_heading }}</h2>
+      <p class="text-muted">{{ t.shared.independence }}</p>
+    </section>
+    <section class="tile tile--roomy">
+      <h2 class="heading-3">{{ s.contact_heading }}</h2>
+      <p class="text-muted">{{ contact }}</p>
+    </section>
+    <section class="tile tile--roomy">
+      <h2 class="heading-3">{{ s.contribute_heading }}</h2>
+      <p class="text-muted">{% include core/localize.html text=t.shared.contribute_html %}</p>
+    </section>
+  </div>
+</main>

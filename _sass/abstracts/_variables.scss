@@ -1,0 +1,16 @@
+// Build-time constants. Runtime design tokens live in base/_tokens.scss.
+
+// Breakpoints
+$bp-mobile: 720px;
+
+// Faceted corner sizes used by the cut-corners() mixin.
+$cut-sizes: (
+  sm: 9px,
+  md: 16px,
+  lg: 28px,
+);
+
+// Layout
+$container-max: 1280px;
+$gutter: clamp(16px, 4vw, 48px);
+$touch-target: 44px;

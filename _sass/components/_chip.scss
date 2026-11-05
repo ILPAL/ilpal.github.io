@@ -1,0 +1,27 @@
+@use "../abstracts" as *;
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  @include cut-corners(sm);
+  display: inline-block;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-ink);
+  background: var(--color-tint);
+
+  // Status modifiers match the ids in _data/taxonomy.yml.
+  @each $status in (in-development, released, archived) {
+    &--#{$status} {
+      background: var(--color-status-#{$status});
+    }
+  }
+}

@@ -1,0 +1,35 @@
+# Project catalog, newest first. The first entry is featured on the home page.
+#
+# To add a project:
+#   1. Add an entry here (ids must match _data/taxonomy.yml).
+#   2. Add a page per locale, e.g. projects/<id>/index.html and vi/projects/<id>/index.html,
+#      with `layout: project` and `project: <id>` (copy the OpenTAAN pages).
+#
+# Empty values render as localized placeholders.
+- id: opentaan
+  title: OpenTAAN Server
+  kind: games
+  status: in-development
+  license: GPL-3.0
+  stack: [".NET", "Spring Boot"]
+  source_url: ""
+  docs_url: ""
+  release_date: ""
+  screenshot: ""
+  i18n:
+    en:
+      summary: An independent server reimplementation for TAAN, focused on preservation, compatibility and protocol research.
+      lead_html: An independent server reimplementation for <span lang="ko">TAAN (슈팅대전 탄)</span>, focused on preservation, compatibility and protocol research.
+      sections:
+        - heading: How correctness is measured
+          body_html: Its protocol has 343 packet types and no specification, so correctness is measured byte for byte against captured client sessions.
+        - heading: Reference data
+          body_html: OpenTAAN's reference data comes from the client's own files and isn't committed to the repository.
+    vi:
+      summary: Dự án độc lập tái hiện máy chủ cho TAAN, tập trung vào bảo tồn, khả năng tương thích và nghiên cứu giao thức.
+      lead_html: Dự án độc lập tái hiện máy chủ cho <span lang="ko">TAAN (슈팅대전 탄)</span>, tập trung vào bảo tồn, khả năng tương thích và nghiên cứu giao thức.
+      sections:
+        - heading: Cách đo độ chính xác
+          body_html: Giao thức của game có 343 loại gói tin và không có đặc tả, nên độ chính xác được đo đến từng byte so với các phiên ghi lại từ client.
+        - heading: Dữ liệu tham chiếu
+          body_html: Dữ liệu tham chiếu của OpenTAAN lấy từ chính các tệp của client và không được đưa vào kho mã nguồn.

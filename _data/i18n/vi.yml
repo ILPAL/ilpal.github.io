@@ -1,0 +1,137 @@
+# Vietnamese UI strings. Keep keys identical to en.yml.
+
+org_full_name: Initiative for Legacy Preservation, Adaptation and Longevity
+
+a11y:
+  skip: Bỏ qua, đến nội dung chính
+  nav: Điều hướng chính
+  menu: Menu
+  language: Ngôn ngữ
+
+nav:
+  projects: Dự án
+  support: Ủng hộ
+  about: Giới thiệu
+
+footer:
+  site: Trang
+  connect: Kết nối
+  per_project_license: Mỗi dự án có giấy phép mã nguồn riêng.
+  content_license: "[GIẤY PHÉP NỘI DUNG TRANG WEB]"
+
+placeholders:
+  add_link: "[THÊM LIÊN KẾT]"
+  contact: "[LIÊN HỆ]"
+  release_date: "[NGÀY CÔNG KHAI]"
+  screenshot: "[ẢNH CHỤP DỰ ÁN]"
+  team: "[TÊN VÀ VAI TRÒ THÀNH VIÊN]"
+  legal_status: "[TÌNH TRẠNG PHÁP LÝ VÀ QUỐC GIA]"
+  funding_reports: "[LIÊN KẾT ĐẾN BÁO CÁO TÀI CHÍNH]"
+
+links:
+  github_org: tổ chức ILPAL trên GitHub
+  about_page: trang Giới thiệu
+
+shared:
+  contribute_html: Mã nguồn, kiểm thử và tài liệu đều rất hữu ích. Hãy bắt đầu từ %github%.
+  independence: ILPAL là tổ chức độc lập, không liên kết với chủ sở hữu bản quyền của các phần mềm được nghiên cứu.
+  nonprofit: ILPAL dự định hoạt động theo mô hình phi lợi nhuận.
+  support_cta: Ủng hộ phát triển
+  fund_title: Ủng hộ những người đang viết mã.
+  fund_lead: Phân tích một phần mềm, nghiên cứu cách phần mềm hoạt động rồi viết mã cần rất nhiều thời gian và công sức. Khoản ủng hộ của bạn giúp các lập trình viên ILPAL có thời gian để làm việc đó.
+
+taxonomy:
+  kinds:
+    games: Game
+    software: Phần mềm
+    modding-tools: Công cụ mod
+  statuses:
+    in-development: Đang phát triển
+    released: Đã phát hành
+    archived: Lưu trữ
+
+project_card:
+  cta: Xem dự án
+
+home:
+  title: ILPAL
+  description: ILPAL viết trình giả lập, phần mềm tái hiện máy chủ và công cụ mod mã nguồn mở cho các phần mềm bị bỏ rơi.
+  hero_title: Phần mềm đã chết vẫn đáng được hồi sinh bằng mã nguồn.
+  hero_lead: ILPAL viết trình giả lập, phần mềm tái hiện máy chủ và công cụ mod mã nguồn mở, để phần mềm bị bỏ rơi, từ game đến ứng dụng nhắn tin, vẫn chạy được và tiếp tục đổi mới rất lâu sau khi hãng ngừng hỗ trợ.
+  hero_secondary: Xem các dự án
+  hero_image_alt: Trái tim kim cương ILPAL
+  latest: Dự án mới nhất
+  all_projects: Xem tất cả dự án
+  pillars:
+    - title: Bảo tồn
+      body: Trình giả lập và phần mềm tái hiện máy chủ cho những ứng dụng đã ngừng dịch vụ chính thức.
+    - title: Thích nghi
+      body: Công cụ mod và tài liệu giúp mọi người thay đổi những phần mềm họ yêu thích.
+    - title: Trường tồn
+      body: Mã nguồn mở mà ai cũng có thể đọc, chạy và tiếp tục phát triển, dù có chúng tôi hay không.
+  fund_cta: Các cách ủng hộ
+
+projects:
+  title: Dự án
+  description: Trình giả lập, phần mềm tái hiện máy chủ và công cụ mod cho các phần mềm bị bỏ rơi.
+  lead: Trình giả lập, phần mềm tái hiện máy chủ và công cụ mod cho các phần mềm bị bỏ rơi. Mọi dự án đều là mã nguồn mở.
+  filter_all: Tất cả
+  filter_by_kind: Lọc theo loại
+  filter_by_status: Lọc theo trạng thái
+  count_one: "1 dự án"
+  count_other: "%count% dự án"
+  empty: Không có dự án nào khớp với bộ lọc này.
+  clear: Xóa bộ lọc
+
+project:
+  back: Tất cả dự án
+  help_heading: Góp sức cho dự án
+  view_source: Xem mã nguồn
+  read_docs: Đọc tài liệu
+  facts:
+    kind: Loại
+    status: Trạng thái
+    release: Công khai mã nguồn
+    license: Giấy phép
+    stack: Công nghệ
+
+support:
+  title: Ủng hộ
+  description: Ủng hộ các lập trình viên giúp phần mềm bị bỏ rơi tiếp tục hoạt động.
+  platforms_heading: Chọn nền tảng
+  pays_for_heading: Khoản ủng hộ được dùng cho
+  pays_for:
+    - Thời gian lập trình trình giả lập và mã máy chủ
+    - Nghiên cứu giao thức và định dạng tệp
+    - Công cụ mod và tài liệu
+  not_for_heading: Không dùng cho
+  not_for:
+    - Vận hành máy chủ công khai
+    - Quyền truy cập phần mềm, vật phẩm trong game hay đặc quyền khác
+  faq_heading: Trước khi ủng hộ
+  faq:
+    - question: ILPAL có phải tổ chức phi lợi nhuận không?
+      answer_html: "ILPAL dự định hoạt động theo mô hình phi lợi nhuận. [TÌNH TRẠNG PHÁP LÝ VÀ QUỐC GIA]. Đừng mặc định khoản ủng hộ được khấu trừ thuế nếu trang này không nêu rõ."
+    - question: ILPAL có liên quan đến nhà phát hành gốc không?
+      answer_html: Không. ILPAL là tổ chức độc lập, không liên kết với chủ sở hữu bản quyền của các phần mềm được nghiên cứu.
+    - question: Ai điều hành ILPAL?
+      answer_html: Xem %about% để biết về đội ngũ, tình trạng pháp lý và cách sử dụng quỹ.
+    - question: Tôi có thể giúp mà không cần ủng hộ tiền không?
+      answer_html: Có. Mã nguồn, kiểm thử và tài liệu đều rất hữu ích. Hãy bắt đầu từ %github%.
+
+about:
+  title: Giới thiệu
+  description: Ai điều hành ILPAL, cách ILPAL được tài trợ và cách đóng góp.
+  heading: Giới thiệu về ILPAL
+  lead_html: <span lang="en">Initiative for Legacy Preservation, Adaptation and Longevity</span> viết mã nguồn mở để các phần mềm bị bỏ rơi vẫn chạy được và tiếp tục đổi mới.
+  team_heading: Ai điều hành ILPAL
+  legal_heading: Tình trạng pháp lý
+  funds_heading: Cách sử dụng quỹ
+  independence_heading: Tính độc lập
+  contact_heading: Liên hệ
+  contribute_heading: Đóng góp
+
+not_found:
+  title: Không tìm thấy trang
+  lead: Trang này không tồn tại hoặc đã được chuyển đi.
+  home: Quay về trang chủ

@@ -1,0 +1,37 @@
+// Runtime design tokens. Components reference these, never raw hex values.
+:root {
+  // Brand blues, darkest to lightest
+  --color-deep: #021a52;
+  --color-ink: #04235e;
+  --color-ink-muted: #24457f;
+  --color-royal: #0349bc;
+  --color-label: #0344ae;
+  --color-link: #0455d2;
+  --color-link-hover: #0036b2;
+  --color-focus: #0c8af7;
+  --color-accent: #2eeaff;
+  --color-accent-hover: #7afff1;
+
+  // Surfaces
+  --color-page: #eefafc;
+  --color-surface: #ffffff;
+  --color-tint: #d5f6fa;
+  --color-on-dark: #ffffff;
+  --color-on-dark-soft: #ddf8fb;
+  --color-glass: rgb(255 255 255 / 12%);
+  --color-glass-hover: rgb(46 234 255 / 26%);
+  --color-divider-on-dark: rgb(255 255 255 / 20%);
+
+  // Project status chips
+  --color-status-in-development: #bdf3ff;
+  --color-status-released: #7afff1;
+  --color-status-archived: #dce5f0;
+
+  // Typography
+  --font-sans: "Be Vietnam Pro", "Noto Sans KR", system-ui, sans-serif;
+  --line-height-body: 1.6;
+}
+
+:lang(vi) {
+  --line-height-body: 1.65;
+}
