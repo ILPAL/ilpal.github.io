@@ -15,7 +15,7 @@ default_lang: en
 
 # Brand assets. Raster only: the vector logo is intentionally not published.
 brand:
-  logo: /assets/icon/ilpal-project-icon-256-transparent.png
+  logo: /assets/icon/ilpal-project-icon-256.png
   logo_size: 256
   favicon: /assets/icon/ilpal-nav-icon-32.png
   social_image: /assets/icon/ilpal-project-icon-256.png

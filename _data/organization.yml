@@ -2,6 +2,10 @@
 # Leave a value empty ("") to render the localized placeholder until it is known.
 github_url: https://github.com/ILPAL
 github_label: github.com/ILPAL
+# Other public profiles, listed in the footer after GitHub, in display order.
+social_links:
+  - label: facebook.com/ilpalproject
+    url: https://www.facebook.com/ilpalproject
 contact_url: ""
 contact_label: ""
 funding_reports_url: ""
@@ -11,6 +15,6 @@ donation_platforms:
   - name: Open Collective
     url: ""
   - name: Patreon
-    url: ""
+    url: https://www.patreon.com/cw/ILPAL
   - name: GitHub Sponsors
     url: ""

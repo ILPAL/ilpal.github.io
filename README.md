@@ -104,8 +104,7 @@ intentionally kept out of this repository (`.gitignore` blocks `assets/icon/*.sv
 
 | File | Used for |
 |---|---|
-| `ilpal-project-icon-256-transparent.png` | Header and footer logo, home-page hero |
+| `ilpal-project-icon-256.png` | Header and footer logo, home-page hero, link previews (`og:image`) and Apple touch icon |
 | `ilpal-nav-icon-32.png` | Browser tab icon (favicon) |
-| `ilpal-project-icon-256.png` | Link previews (`og:image`) and Apple touch icon |
 
 Paths are configured under `brand` in `_config.yml`.

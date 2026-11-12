@@ -19,6 +19,9 @@
         <h2 class="site-footer__heading">{{ t.footer.connect }}</h2>
         <ul class="site-footer__list">
           <li><a href="{{ org.github_url }}">{{ org.github_label }}</a></li>
+          {%- for link in org.social_links %}
+          <li><a href="{{ link.url }}">{{ link.label }}</a></li>
+          {%- endfor %}
           <li>
             {%- if org.contact_url != "" %}
             <a href="{{ org.contact_url }}">{{ org.contact_label | default: org.contact_url }}</a>
